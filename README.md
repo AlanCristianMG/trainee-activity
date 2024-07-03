@@ -1,5 +1,5 @@
 >[!WARNING]
-> The app works over a docker container, for this is very important that you have installed Docker desktop o Docker-cli in your computer.
+> The app works over a docker container, for this is very important that you have installed Git and Docker desktop o Docker-cli in your computer.
 
 >[!NOTE]
 > ## Steps to deploy app

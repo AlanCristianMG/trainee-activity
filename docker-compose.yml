@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  trainee-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: trainee-app
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ./src/trainee:/var/www/html
+    networks:
+      - trainee-network
+
+  trainee-db:
+    image: mysql:8.0
+    container_name: trainee-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: trainee
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - trainee-db-data:/var/lib/mysql
+    networks:
+      - trainee-network
+
+  trainee-nginx:
+    image: nginx:alpine
+    container_name: trainee-nginx
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./src/trainee:/var/www/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - trainee-network
+
+networks:
+  trainee-network:
+    driver: bridge
+
+volumes:
+  trainee-db-data:
+    driver: local

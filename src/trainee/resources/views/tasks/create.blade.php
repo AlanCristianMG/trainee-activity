@@ -26,7 +26,7 @@
                             <label for="description" class="form-label">
                                 <i class="fas fa-align-left me-2"></i> Description
                             </label>
-                            <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror" rows="4"></textarea>
+                            <textarea name="description" id="description" class="form-control @error('description') is-invalid @enderror" rows="4" required></textarea>
                             @error('description')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror

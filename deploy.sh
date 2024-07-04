@@ -41,6 +41,9 @@ docker-compose exec -T trainee-app php artisan key:generate
 # Ejecutar las migraciones
 echo "Ejecutando las migraciones de la base de datos..."
 docker-compose exec -T trainee-app php artisan migrate --force
+docker-compose exec -T trainee-app php artisan db:seed --class=CategoriesTableSeeder
+docker-compose exec -T trainee-app php artisan db:seed --class=TasksTableSeeder
+
 
 # Instalar dependencias de npm y compilar assets
 echo "Instalando dependencias de npm y compilando assets..."
@@ -52,5 +55,6 @@ echo "Ajustando permisos..."
 docker-compose exec -T trainee-app chown -R www-data:www-data /var/www/html
 docker-compose exec -T trainee-app chmod -R 775 /var/www/html/storage/logs/
 docker-compose exec -T trainee-app chown -R www-data:www-data /var/www/html/storage/logs/
+
 
 echo "¡Despliegue completado! La aplicación debería estar disponible en http://localhost:8000"

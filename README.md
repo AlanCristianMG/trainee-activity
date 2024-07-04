@@ -35,3 +35,9 @@
 >  chmod +x deploy.sh
 >```
 > use 'sudo' if is necessary. 
+
+
+>[!NOTE]
+>
+> *Documentation*
+> 

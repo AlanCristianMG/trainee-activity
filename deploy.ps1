@@ -34,20 +34,19 @@ docker-compose exec -T trainee-app cp .env.example .env
 Write-Host "Generando la clave de la aplicación..."
 docker-compose exec -T trainee-app php artisan key:generate
 
-# Configurar la conexión a la base de datos
-Write-Host "Configurando la conexión a la base de datos..."
-docker-compose exec -T trainee-app sed -i 's/DB_HOST=127.0.0.1/DB_HOST=trainee-db/' .env
-docker-compose exec -T trainee-app sed -i 's/DB_DATABASE=laravel/DB_DATABASE=trainee/' .env
-docker-compose exec -T trainee-app sed -i 's/DB_USERNAME=root/DB_USERNAME=root/' .env
-docker-compose exec -T trainee-app sed -i 's/DB_PASSWORD=/DB_PASSWORD=root/' .env
-
 # Ejecutar las migraciones
 Write-Host "Ejecutando las migraciones de la base de datos..."
 docker-compose exec -T trainee-app php artisan migrate --force
+docker-compose exec -T trainee-app php artisan db:seed --class=CategoriesTableSeeder
+docker-compose exec -T trainee-app php artisan db:seed --class=TasksTableSeeder
+
 
 # Instalar dependencias de npm y compilar assets
 Write-Host "Instalando dependencias de npm y compilando assets..."
 docker-compose exec -T trainee-app npm install
+docker-compose exec -T trainee-app npm install -D tailwindcss postcss autoprefixer
+docker-compose exec -T trainee-app npx tailwindcss init
+docker-compose exec -T trainee-app npm install aos
 docker-compose exec -T trainee-app npm run build
 
 # Ajustar permisos

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trainee Activity - Task Management for Beginners</title>
+    <title>Trainee Activity</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Animate.css -->
@@ -20,10 +20,13 @@
         }
 
         .hero {
-            background-color: #f8f9fa;
+            background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
             padding: 100px 0;
         }
-
+        .hero, .overNav, .cta{
+            background-color: #8BC6EC;
+            background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+        }
         .hero-image {
             max-width: 200px;
             margin-bottom: 2rem;
@@ -44,18 +47,20 @@
         }
 
         .cta {
-            background-color: #0093E9;
-            background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-            color: white;
+            color: black;
             padding: 80px 0;
         }
 
         footer {
-            background-color: #343a40;
-            color: white;
             padding: 30px 0;
         }
+        footer, .features{
+            background: #141E30;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+            color: white;
+        }
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -147,9 +152,9 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light overNav animate__animated animate__rotateInDownLeft">
         <div class="container">
-            <a class="navbar-brand" href="#">Trainee Activity</a>
+            <a class="navbar-brand" href="#">Task Manager</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -182,13 +187,13 @@
     <!-- Hero Section -->
     <section class="text-center hero">
         <div class="container">
-            <img src="./Logo.png" alt="Trainee Activity Logo" class="hero-image animate__animated animate__fadeInDown">
-            <h1 class="display-4 animate__animated animate__fadeInDown">Welcome to Trainee Activity</h1>
+            <img style="width: 22dvh" src="http://127.0.0.1:5500/src/trainee/resources/img/Logo.png" alt="Trainee Activity Logo" class="hero-image animate__animated animate__rotateIn">
+            <h1 class="display-4 animate__animated animate__lightSpeedInLeft">Welcome to Task Manager</h1>
             <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Manage your tasks effortlessly and
                 boost your productivity!</p>
-            <button class="btn btn-primary animate__animated animate__fadeInUp animate__delay-2s">
-                <span class="btn-txt">Get started</span>
-                <kbd class="btn-kbd">📝</kbd>
+            <button class="btn btn-primary animate__animated animate__fadeInUp animate__delay-1s" style="width: 17rem; height: 7dvh;">
+                <span class="btn-txt">Get started now</span>
+                <kbd class="btn-kbd">💪</kbd>
             </button>
         </div>
     </section>
@@ -196,22 +201,22 @@
     <!-- Features Section -->
     <section class="features">
         <div class="container">
-            <h2 class="mb-5 text-center fade-in">Our Features</h2>
+            <h1 class="mb-5 text-center fade-in">Our Features</h1>
             <div class="row">
                 <div class="text-center col-md-4 fade-in">
-                    <div class="feature-icon">📝</div>
+                    <div class="feature-icon" style="font-size: 7dvw">📝</div>
                     <h3>Easy Task Creation</h3>
                     <p>Create and organize your tasks with just a few clicks.</p>
                 </div>
                 <div class="text-center col-md-4 fade-in">
-                    <div class="feature-icon">🏆</div>
-                    <h3>Progress Tracking</h3>
-                    <p>Monitor your progress and celebrate your achievements.</p>
+                    <div class="feature-icon" style="font-size: 7dvw">🏆</div>
+                    <h3>Mark as complete easily</h3>
+                    <p>Track your progress marking your completed tasks.</p>
                 </div>
                 <div class="text-center col-md-4 fade-in">
-                    <div class="feature-icon">📊</div>
-                    <h3>Insightful Analytics</h3>
-                    <p>Gain valuable insights into your productivity patterns.</p>
+                    <div class="feature-icon" style="font-size: 7dvw">📊</div>
+                    <h3>Classify your tasks</h3>
+                    <p>Separate your tasks in different categories.</p>
                 </div>
             </div>
         </div>
@@ -223,7 +228,7 @@
             <h2 class="mb-4 animate__animated animate__fadeInLeft">Ready to boost your productivity?</h2>
             <a href="{{ route('register') }}" class="btn btn-primary">
                 <span class="btn-txt">Sign Up Now</span>
-                <kbd class="btn-kbd">S</kbd>
+                <kbd class="btn-kbd">👍</kbd>
             </a>
         </div>
     </section>
@@ -231,7 +236,7 @@
     <!-- Footer -->
     <footer class="text-center">
         <div class="container">
-            <p>&copy; 2024 Trainee Activity. All rights reserved.</p>
+            <p>&copy; 2024 Trainee Activity. All rights reserved. Alan Cristian MArtinez Genaro</p>
         </div>
     </footer>
 

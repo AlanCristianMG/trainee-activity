@@ -45,15 +45,7 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" name="completed" id="completed" class="form-check-input @error('completed') is-invalid @enderror">
-                            <label for="completed" class="form-check-label">
-                                <i class="fas fa-check-circle me-2"></i> Completed
-                            </label>
-                            @error('completed')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
+                        
                         <div class="gap-2 d-grid">
                             <button type="submit" class="btn btn-primary btn-lg">
                                 <i class="fas fa-save me-2"></i> Create Task

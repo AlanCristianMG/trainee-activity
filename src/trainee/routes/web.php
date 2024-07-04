@@ -15,9 +15,6 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,6 +26,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('tasks', TaskController::class);
     Route::resource('categories', CategoryController::class);
+});
+
+Route::get('/', function () {
+    return view('landing');
 });
 
 require __DIR__.'/auth.php';

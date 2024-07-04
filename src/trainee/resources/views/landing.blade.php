@@ -187,7 +187,7 @@
     <!-- Hero Section -->
     <section class="text-center hero">
         <div class="container">
-            <img style="width: 22dvh" src="http://127.0.0.1:5500/src/trainee/resources/img/Logo.png" alt="Trainee Activity Logo" class="hero-image animate__animated animate__rotateIn">
+            <img style="width: 22dvh" src="{{ asset('build/assets/Logo.png') }}" alt="Trainee Activity Logo" class="hero-image animate__animated animate__rotateIn">
             <h1 class="display-4 animate__animated animate__lightSpeedInLeft">Welcome to Task Manager</h1>
             <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Manage your tasks effortlessly and
                 boost your productivity!</p>

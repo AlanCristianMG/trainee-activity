@@ -8,11 +8,27 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        if ($request->ajax()) {
+            $tasks = Task::with('category');
+
+            if ($request->search) {
+                $tasks->where('name', 'like', '%' . $request->search . '%');
+            }
+
+            if ($request->start_date && $request->end_date) {
+                $tasks->whereBetween('created_at', [$request->start_date, $request->end_date]);
+            }
+
+            $tasks = $tasks->get();
+
+            return response()->json($tasks);
+        }
+
         $tasks = Task::with('category')->get();
         return view('tasks.index', compact('tasks'));
-    }
+    }          
 
     public function create()
     {

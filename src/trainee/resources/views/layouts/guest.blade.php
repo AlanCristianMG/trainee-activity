@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <link rel="shortcut icon" href="http://127.0.0.1:5500/src/trainee/resources/img/Logo.png" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('build/assets/Logo.png') }}" type="image/x-icon">
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
@@ -25,7 +25,7 @@ background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, F
         ">
             <div style="display: flex; flex-direction: column; justify-content: center; align-content: center; align-items: center;width: 100%;">
                 <a href="/" style="width: fit-content">
-                    <img src="http://127.0.0.1:5500/src/trainee/resources/img/Logo.png" style="width: 7rem" alt="">
+                    <img src="{{ asset('build/assets/Logo.png') }}" style="width: 7rem" alt="">
                 </a>
                 <h1 style="font-size: 150%; color:white;">Task Manager</h1>
             </div>

@@ -34,7 +34,7 @@
                     <div class="mb-3 form-check">
                         <input type="checkbox" name="completed" class="form-check-input" id="completed" {{ $task->completed ? 'checked' : '' }}>
                         <label class="form-check-label" for="completed">Completed</label>
-                    </div>
+                    </div>                    
                     <div class="d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary">
                             <i class="fas fa-save"></i> Update

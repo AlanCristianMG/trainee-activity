@@ -48,10 +48,17 @@ class TaskController extends Controller
             'name' => 'required',
             'category_id' => 'required',
         ]);
-
-        $task->update($request->all());
+    
+        $task->name = $request->input('name');
+        $task->description = $request->input('description');
+        $task->category_id = $request->input('category_id');
+        $task->completed = $request->has('completed');
+    
+        $task->save();
+    
         return redirect()->route('tasks.index');
     }
+    
 
     public function destroy(Task $task)
     {

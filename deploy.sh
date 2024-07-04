@@ -37,12 +37,6 @@ docker-compose exec -T trainee-app cp .env.example .env
 echo "Generando la clave de la aplicación..."
 docker-compose exec -T trainee-app php artisan key:generate
 
-# Configurar la conexión a la base de datos
-echo "Configurando la conexión a la base de datos..."
-docker-compose exec -T trainee-app sed -i 's/DB_HOST=127.0.0.1/DB_HOST=trainee-db/' .env
-docker-compose exec -T trainee-app sed -i 's/DB_DATABASE=laravel/DB_DATABASE=trainee/' .env
-docker-compose exec -T trainee-app sed -i 's/DB_USERNAME=root/DB_USERNAME=root/' .env
-docker-compose exec -T trainee-app sed -i 's/DB_PASSWORD=/DB_PASSWORD=root/' .env
 
 # Ejecutar las migraciones
 echo "Ejecutando las migraciones de la base de datos..."

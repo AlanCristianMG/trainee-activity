@@ -20,10 +20,10 @@ class TasksTableSeeder extends Seeder
         // Seed with 5 tasks with random names and descriptions
         for ($i = 0; $i < 5; $i++) {
             DB::table('tasks')->insert([
-                'name' => $faker->sentence(3), // Generate a 3-word sentence for the task name
-                'description' => $faker->paragraph(2), // Generate a 2-paragraph description (optional)
-                'category_id' => rand(1, 10), // Assign a random category ID (assuming you have 10 categories)
-                'completed' => false, // Default to not completed
+                'name' => $faker->sentence(3), 
+                'description' => $faker->paragraph(2),
+                'category_id' => rand(1, 10), 
+                'completed' => false,
             ]);
         }
     }

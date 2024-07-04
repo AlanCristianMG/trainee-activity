@@ -30,6 +30,12 @@
 > ```
 >  Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 > ```
+> if the problem persist try with:
+> ```
+> Set-ExecutionPolicy Unrestricted -Scope CurrentUser
+>```
+>
+> 
 > Or change permissions on Linux with:
 >```
 >  chmod +x deploy.sh
@@ -41,3 +47,5 @@
 >
 > *Documentation*
 > 
+> [Documentación Técnica](https://docs.google.com/document/d/1QSqZRzW5bpm9s8xCde1GL_0BYmJz6tFKuO7RF4prHRU/edit?usp=sharing)
+

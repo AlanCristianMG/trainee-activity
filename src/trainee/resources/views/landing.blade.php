@@ -191,10 +191,12 @@
             <h1 class="display-4 animate__animated animate__lightSpeedInLeft">Welcome to Task Manager</h1>
             <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Manage your tasks effortlessly and
                 boost your productivity!</p>
-            <button class="btn btn-primary animate__animated animate__fadeInUp animate__delay-1s" style="width: 17rem; height: 7dvh;">
-                <span class="btn-txt">Get started now</span>
-                <kbd class="btn-kbd">💪</kbd>
-            </button>
+            <a href="{{ route('register') }}">
+                <button class="btn btn-primary animate__animated animate__fadeInUp animate__delay-1s" style="width: 17rem; height: 7dvh;">
+                    <span class="btn-txt">Get started now</span>
+                    <kbd class="btn-kbd">💪</kbd>
+                </button>
+            </a>
         </div>
     </section>
 

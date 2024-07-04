@@ -17,7 +17,6 @@ class TasksTableSeeder extends Seeder
     {
         $faker = FakerFactory::create();
 
-        // Seed with 5 tasks with random names and descriptions
         for ($i = 0; $i < 5; $i++) {
             DB::table('tasks')->insert([
                 'name' => $faker->sentence(3), 
